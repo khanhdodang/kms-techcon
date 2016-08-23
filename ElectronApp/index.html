@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta class="foundation-mq-small">
+    <meta class="foundation-mq-medium">
+    <meta class="foundation-mq-large">
+
+    <title>Electron - TechCon 2016!</title>
+</head>
+
+<body>
+    <div class="container center">
+
+      <h5><i class="fa fa-car" style="color:red;"></i> Welcome KMS TechCon 2016!</h5>
+      <h5>Topic: Automation Testing using JavaScript</h5>
+      <h5 class="subheader">Presenter: Khanh Do</h5>
+    </div>
+    <div id="content" class="container large-12 columns">
+        <div class="example">
+            <h5 class="subheader">This is where you can log into the secure area. Enter <em>tomsmith</em> for the username and <em>SuperSecretPassword!</em> for the password. If the information is wrong you should see error messages.</h5>
+            <form name="login" id="login" action="/authenticate" method="post">
+                <div class="row">
+                    <div id="flash-messages" class="large-offset-3 large-6 columns">
+                        <div data-alert="" id="flash" class="flash notice">
+                            Please enter username and password!
+                            <a href="#" class="close">×</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-offset-3 large-6 columns">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-offset-3 large-6 columns">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-offset-3 large-6 columns">
+                        <button class="radius" type="button" id="bt_login"><i class="fa fa-2x fa-sign-in"> Login</i></button>
+                    </div>
+                </div>
+            </form>
+
+            <script>
+
+                document.getElementById("bt_login").addEventListener("click", myFunction);
+
+                function myFunction() {
+                  var u = 'tomsmith'
+                  var p ='SuperSecretPassword!'
+
+                  var username = document.getElementById("username").value;
+                  var password = document.getElementById("password").value;
+
+                  if(username == u && password == p){
+                    document.getElementById("flash").setAttribute("class", "flash success")
+                    document.getElementById("flash").innerHTML = 'You logged into a secure area!'
+                  }else{
+                    document.getElementById("flash").setAttribute("class", "flash error")
+                    document.getElementById("flash").innerHTML = 'Your username or password is invalid!'
+                  }
+                }
+            </script>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+<link href="./css/app.css" rel="stylesheet"  type="text/css">
+<link href="./css/site.css" rel="stylesheet"  type="text/css">
+<link href="./css/font-awesome.css" rel="stylesheet"  type="text/css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</html>
