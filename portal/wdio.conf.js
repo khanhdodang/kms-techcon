@@ -6,11 +6,13 @@ exports.config = {
     capabilities: [{
         maxInstances: 1,
         browserName: 'firefox'
-    },
-    {
-        maxInstances: 1,
-        browserName: 'chrome'
-    }],
+    }
+    // ,
+    // {
+    //     maxInstances: 1,
+    //     browserName: 'chrome'
+    // }
+  ],
     sync: true,
     logLevel: 'verbose',
     coloredLogs: true,
@@ -23,6 +25,7 @@ exports.config = {
     framework: 'mocha',
     reporters: ['dot'],
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        timeout: 60000
     }
 }
