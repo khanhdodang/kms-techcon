@@ -10,9 +10,9 @@
     "ios_app_test": "mocha --timeout 600000 ./mobile/ios-app-test.js",
     "portal_test": "node_modules/webdriverio/bin/wdio ./portal/wdio.conf.js",
     "gulp": "gulp"
-  },  
+  },
   "dependencies": {
-    "@kobiton/core-build": "^1.0.0",
+    "@kobiton/core-build": "^1.0.15",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.1",
     "gulp-mocha": "^2.2.0",
